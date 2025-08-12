@@ -1,0 +1,6 @@
+
+
+@baseURL = https://localhost:7119
+GET {{baseURL}}/options
+# ini/General:AppHostProvider
+# Accept: application/json
