@@ -1,0 +1,9 @@
+@baseURL = http://localhost:5091
+
+POST {{baseURL}}/product-minimal
+Content-Type: : application/json
+{
+  "name":"aya",
+  "price":3.3
+}
+###
