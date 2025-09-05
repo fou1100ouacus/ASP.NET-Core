@@ -1,0 +1,60 @@
+@baseUrl =  http://localhost:5002
+#  http://localhost:5002
+# https://localhost:7178
+
+@productId = 2779ee47-10b0-4bd7-8342-404006aa1392
+OPTIONS {{baseUrl}}/api/products
+
+### 
+HEAD {{baseUrl}}/api/products/{{productId}}
+
+###
+GET {{baseUrl}}/api/products?page=1&pageSize=100
+
+###
+GET {{baseUrl}}/api/products/{{productId}}?includeReviews=true
+###
+
+POST {{baseUrl}}/api/products
+Content-Type: application/json
+
+{
+  "name": "Kevin Kelo",
+  "price": 3
+}
+
+
+###
+GET  http://localhost:5002/api/products/00000000-0000-0000-0000-000000000000
+
+### 
+PUT {{baseUrl}}/api/products/{{productId}}
+Content-Type: application/json
+
+{
+    "name": "jkl bar",
+    "price": 3.50
+}
+
+
+### DELETE
+DELETE {{baseUrl}}/api/products/{{productId}}
+
+###
+POST {{baseUrl}}/api/products/process
+//  "jobId": "6c2bddf5-fa5a-4cfe-b16a-19e4dfca1ed9",
+
+
+@JobId = b079ad59-f94a-4ab2-b584-cd55d60eac29
+
+###
+GET {{baseUrl}}/api/products/status/{{JobId}}
+
+###
+GET {{baseUrl}}/api/products/products-legacy
+
+###
+GET {{baseUrl}}/api/products/temp-products
+
+
+# http://localhost:5002/api/products/temp-products
