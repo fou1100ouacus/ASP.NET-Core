@@ -1,8 +1,7 @@
 # 🚀 Mastering ASP.NET Core: Concepts to Production-Ready APIs
 
 ## 📚 Overview
-Welcome to the repository for the **Mastering ASP.NET Core: Concepts to Production-Ready APIs** course! This comprehensive course takes you from foundational concepts to building production-ready APIs using ASP.NET Core. Whether you're a beginner or a seasoned developer, this course offers hands-on learning through video lectures, coding exercises, and sandbox projects. 🛠️ The course is **81% complete** and covers web basics to advanced topics like Clean Architecture and Docker integration.
-
+Welcome to the repository for the **Mastering ASP.NET Core: Concepts to Production-Ready APIs** course! This comprehensive course takes you from foundational concepts to building production-ready APIs using ASP.NET Core. Whether you're a beginner or a seasoned developer, this course offers hands-on learning through video lectures, coding exercises, and sandbox projects.
 ## 🗂️ Course Structure
 The course is organized into **33 modules**, each focusing on key ASP.NET Core concepts. Below is an overview of the modules with their core topics and durations:
 
