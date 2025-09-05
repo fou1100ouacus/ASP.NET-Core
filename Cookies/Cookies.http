@@ -1,0 +1,5 @@
+@Cookies_HostAddress = http://localhost:5044
+
+GET {{Cookies_HostAddress}}/cookies/perference
+cookies:theme-dark;language-AR;timezone-America/tone
+###
