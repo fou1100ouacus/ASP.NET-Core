@@ -1,0 +1,5 @@
+@Middleware1_HostAddress = http://localhost:5225
+// <= DIC>
+GET {{Middleware1_HostAddress}}/weatherforecast/
+//
+###
