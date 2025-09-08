@@ -1,0 +1,129 @@
+@baseUrl=http://localhost:5056
+
+
+# // 1- ==================================================================
+# ###
+# GET {{baseUrl}}/products
+
+# ###
+# GET {{baseUrl}}/products/all
+
+# ###
+# GET {{baseUrl}}/route-table
+
+# // 3- ==================================================================
+
+# ###
+# {{baseUrl}}/product/20
+
+
+# ###
+# {{baseUrl}}/date/2025-12-3
+
+
+# ###
+# GET {{baseUrl}}
+
+# ###
+# GET {{baseUrl}}/products
+
+# ### 
+# GET {{baseUrl}}/users
+
+# ### 
+# GET {{baseUrl}}/users/42
+
+
+# ###
+# GET {{baseUrl}}/abxcd 
+
+# ###
+# GET {{baseUrl}}/abxcd 
+
+# ###
+# GET {{baseUrl}}/single/my/path/test/wire
+
+# ###
+# GET {{baseUrl}}/single/my%2Fpath
+
+# ###
+# GET {{baseUrl}}/double/my%2Fpath
+
+# ###
+# GET {{baseUrl}}/123/name
+
+# ### 
+# GET {{baseUrl}}/123%2F456/name
+
+# ###
+# GET {{baseUrl}}/123+456/name
+# ###
+
+
+# // 2- ==================================================================
+
+###
+GET {{baseUrl}}/int/123
+
+###
+GET {{baseUrl}}/bool/true
+
+###
+GET {{baseUrl}}/datetime/2024-03-08
+
+###
+GET {{baseUrl}}/datetime/2016-12-31%2019:32
+
+
+###
+GET {{baseUrl}}/decimal/49.99
+
+###
+GET {{baseUrl}}/double/1.234
+
+###
+GET {{baseUrl}}/float/1.234
+
+###
+GET {{baseUrl}}/guid/CD2C1638-1638-72D5-1638-DEADBEEF1638
+
+###
+GET {{baseUrl}}/long/123456789
+
+###
+GET {{baseUrl}}/minlength/Rick
+
+###
+GET {{baseUrl}}/maxlength/MyFile
+
+###
+GET {{baseUrl}}/length/somefile.txt
+
+###
+GET {{baseUrl}}/lengthrange/somefile.txt
+
+###
+GET {{baseUrl}}/min/19
+
+###
+GET {{baseUrl}}/max/91
+
+###
+GET {{baseUrl}}/range/121
+
+###
+GET {{baseUrl}}/alpha/Rick
+
+###
+GET {{baseUrl}}/regex/123-45-6789
+
+###
+GET {{baseUrl}}/required/Rick
+
+
+###
+GET {{baseUrl}}/sales/month/14
+
+###
+
+GET {{baseUrl}}/order/100
