@@ -1,0 +1,14 @@
+@baseUrl = http://localhost:5022
+
+
+###
+
+GET {{baseUrl}}/login
+
+###
+
+GET {{baseUrl}}/logout
+
+###
+
+GET {{baseUrl}}/user
