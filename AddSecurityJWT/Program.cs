@@ -1,57 +1,63 @@
+
+
+using AddSecurityJWT.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using AddSecurityJWT.Permissions;
+
 var builder = WebApplication.CreateBuilder(args);
+
 builder.Services.AddControllers();
-//dotnet add package Microsoft.AspNetCore.Authentication.JwtBearer
 
+builder.Services.AddScoped<JwtTokenProvider>();
 
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(options =>
+{
+    var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 
+    options.TokenValidationParameters = new()
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = jwtSettings["Issuer"],
+        ValidAudience = jwtSettings["Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(
+            System.Text.Encoding.UTF8.GetBytes(jwtSettings["SecretKey"]!)
+        )
+    };
+});
+// authorization
 
+builder.Services.AddAuthorization(options =>
+{
+  //  Project Management Permissions
+    options.AddPolicy(Permission.Project.Create, policy => policy.RequireClaim("permission", Permission.Project.Create));
+    options.AddPolicy(Permission.Project.Read, policy => policy.RequireClaim("permission", Permission.Project.Read));
+    options.AddPolicy(Permission.Project.Update, policy => policy.RequireClaim("permission", Permission.Project.Update));
+    options.AddPolicy(Permission.Project.Delete, policy => policy.RequireClaim("permission", Permission.Project.Delete));
+    options.AddPolicy(Permission.Project.AssignMember, policy => policy.RequireClaim("permission", Permission.Project.AssignMember));
+    options.AddPolicy(Permission.Project.ManageBudget, policy => policy.RequireClaim("permission", Permission.Project.ManageBudget));
 
-// builder.Services.AddScoped<JwtTokenProvider>();
-
-// builder.Services.AddAuthentication(options =>
-// {
-//     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-//     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-// }).AddJwtBearer(options =>
-// {
-//     var jwtSettings = builder.Configuration.GetSection("JwtSettings");
-
-//     options.TokenValidationParameters = new()
-//     {
-//         ValidateIssuer = true,
-//         ValidateAudience = true,
-//         ValidateLifetime = true,
-//         ValidateIssuerSigningKey = true,
-//         ValidIssuer = jwtSettings["Issuer"],
-//         ValidAudience = jwtSettings["Audience"],
-//         IssuerSigningKey = new SymmetricSecurityKey(
-//             Encoding.UTF8.GetBytes(jwtSettings["SecretKey"]!)
-//         )
-//     };
-// });
-
-// builder.Services.AddAuthorization(options =>
-// {
-//     // Project Management Permissions
-//     options.AddPolicy(Permission.Project.Create, policy => policy.RequireClaim("permission", Permission.Project.Create));
-//     options.AddPolicy(Permission.Project.Read, policy => policy.RequireClaim("permission", Permission.Project.Read));
-//     options.AddPolicy(Permission.Project.Update, policy => policy.RequireClaim("permission", Permission.Project.Update));
-//     options.AddPolicy(Permission.Project.Delete, policy => policy.RequireClaim("permission", Permission.Project.Delete));
-//     options.AddPolicy(Permission.Project.AssignMember, policy => policy.RequireClaim("permission", Permission.Project.AssignMember));
-//     options.AddPolicy(Permission.Project.ManageBudget, policy => policy.RequireClaim("permission", Permission.Project.ManageBudget));
-
-//     // Task Management Permissions (demonstrating granularity)
-//     options.AddPolicy(Permission.Task.Create, policy => policy.RequireClaim("permission", Permission.Task.Create));
-//     options.AddPolicy(Permission.Task.Read, policy => policy.RequireClaim("permission", Permission.Task.Read));
-//     options.AddPolicy(Permission.Task.Update, policy => policy.RequireClaim("permission", Permission.Task.Update));
-//     options.AddPolicy(Permission.Task.Delete, policy => policy.RequireClaim("permission", Permission.Task.Delete));
-//     options.AddPolicy(Permission.Task.AssignUser, policy => policy.RequireClaim("permission", Permission.Task.AssignUser));
-//     options.AddPolicy(Permission.Task.UpdateStatus, policy => policy.RequireClaim("permission", Permission.Task.UpdateStatus));
-//     options.AddPolicy(Permission.Task.Comment, policy => policy.RequireClaim("permission", Permission.Task.Comment));
-// });
-
-
+    // Task Management Permissions (demonstrating granularity)
+    options.AddPolicy(Permission.Task.Create, policy => policy.RequireClaim("permission", Permission.Task.Create));
+    options.AddPolicy(Permission.Task.Read, policy => policy.RequireClaim("permission", Permission.Task.Read));
+    options.AddPolicy(Permission.Task.Update, policy => policy.RequireClaim("permission", Permission.Task.Update));
+    options.AddPolicy(Permission.Task.Delete, policy => policy.RequireClaim("permission", Permission.Task.Delete));
+    options.AddPolicy(Permission.Task.AssignUser, policy => policy.RequireClaim("permission", Permission.Task.AssignUser));
+    options.AddPolicy(Permission.Task.UpdateStatus, policy => policy.RequireClaim("permission", Permission.Task.UpdateStatus));
+    options.AddPolicy(Permission.Task.Comment, policy => policy.RequireClaim("permission", Permission.Task.Comment));
+});
 var app = builder.Build();
-app.MapGet("/", () => "Hello World!");
+
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.MapControllers();
+
 app.Run();

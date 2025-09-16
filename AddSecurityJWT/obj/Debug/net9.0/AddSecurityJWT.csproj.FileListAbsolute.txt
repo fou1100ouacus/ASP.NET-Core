@@ -25,3 +25,13 @@ D:\Programming\API Code\AddSecurityJWT\obj\Debug\net9.0\refint\AddSecurityJWT.dl
 D:\Programming\API Code\AddSecurityJWT\obj\Debug\net9.0\AddSecurityJWT.pdb
 D:\Programming\API Code\AddSecurityJWT\obj\Debug\net9.0\AddSecurityJWT.genruntimeconfig.cache
 D:\Programming\API Code\AddSecurityJWT\obj\Debug\net9.0\ref\AddSecurityJWT.dll
+D:\Programming\API Code\AddSecurityJWT\bin\Debug\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Programming\API Code\AddSecurityJWT\bin\Debug\net9.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Programming\API Code\AddSecurityJWT\bin\Debug\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Programming\API Code\AddSecurityJWT\bin\Debug\net9.0\Microsoft.IdentityModel.Logging.dll
+D:\Programming\API Code\AddSecurityJWT\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.dll
+D:\Programming\API Code\AddSecurityJWT\bin\Debug\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Programming\API Code\AddSecurityJWT\bin\Debug\net9.0\Microsoft.IdentityModel.Tokens.dll
+D:\Programming\API Code\AddSecurityJWT\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Programming\API Code\AddSecurityJWT\obj\Debug\net9.0\AddSecurityJWT.csproj.AssemblyReference.cache
+D:\Programming\API Code\AddSecurityJWT\obj\Debug\net9.0\AddSecur.1765B839.Up2Date
