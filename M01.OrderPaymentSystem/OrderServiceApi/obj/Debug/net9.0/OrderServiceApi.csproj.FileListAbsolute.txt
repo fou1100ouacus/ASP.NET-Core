@@ -1,0 +1,8 @@
+D:\Programming\ASP\M01.OrderPaymentSystem\OrderServiceApi\obj\Debug\net9.0\rpswa.dswa.cache.json
+D:\Programming\ASP\M01.OrderPaymentSystem\OrderServiceApi\obj\Debug\net9.0\OrderServiceApi.GeneratedMSBuildEditorConfig.editorconfig
+D:\Programming\ASP\M01.OrderPaymentSystem\OrderServiceApi\obj\Debug\net9.0\OrderServiceApi.AssemblyInfoInputs.cache
+D:\Programming\ASP\M01.OrderPaymentSystem\OrderServiceApi\obj\Debug\net9.0\OrderServiceApi.AssemblyInfo.cs
+D:\Programming\ASP\M01.OrderPaymentSystem\OrderServiceApi\obj\Debug\net9.0\OrderServiceApi.csproj.CoreCompileInputs.cache
+D:\Programming\ASP\M01.OrderPaymentSystem\OrderServiceApi\obj\Debug\net9.0\OrderServiceApi.MvcApplicationPartsAssemblyInfo.cache
+D:\Programming\ASP\M01.OrderPaymentSystem\OrderServiceApi\obj\Debug\net9.0\OrderServiceApi.csproj.AssemblyReference.cache
+D:\Programming\ASP\M01.OrderPaymentSystem\OrderServiceApi\obj\Debug\net9.0\OrderServiceApi.MvcApplicationPartsAssemblyInfo.cs
