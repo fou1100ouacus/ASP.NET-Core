@@ -1,0 +1,38 @@
+### 1. تسجيل الدخول وحصول على الـ JWT
+POST https://localhost:5001
+Content-Type: application/json
+
+{
+  "username": "ahmed",
+  "password": "123456"
+}
+
+# الرد هيبقى شكله كده:
+# { "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.xxxxx" }
+
+### احفظ التوكن في متغير عشان نستخدمه في باقي الطلبات
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.xxxxx
+
+### 2. صفحة الملف الشخصي (أي حد مسجل دخول)
+GET https://localhost:5001/api/profile
+Authorization: Bearer {{token}}
+
+### 3. صفحة الأدمن فقط
+GET https://localhost:5001/api/admin
+Authorization: Bearer {{token}}
+
+### 4. صفحة البريميام فقط
+GET https://localhost:5001/api/premium
+Authorization: Bearer {{token}}
+
+### 5. تجربة طلب بدون توكن (هيطلع 401)
+GET https://localhost:5001/api/profile
+
+### 6. تجربة يوزر عادي (غلط باسورد = 401)
+POST https://localhost:5001/api/login
+Content-Type: application/json
+
+{
+  "username": "ahmed",
+  "password": "wrongpassword"
+}
